@@ -1,0 +1,14 @@
+{
+  "name": "automacaotestesapi-cwi",
+  "version": "1.0.0",
+  "description": "Automacao de Teste de API - Reset CWI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emerson Carvalho",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^11.0.1"
+  }
+}
