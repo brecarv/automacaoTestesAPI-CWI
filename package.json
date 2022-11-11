@@ -9,6 +9,7 @@
   "author": "Emerson Carvalho",
   "license": "ISC",
   "devDependencies": {
+    "@faker-js/faker": "^7.6.0",
     "cypress": "^11.0.1"
   }
 }
