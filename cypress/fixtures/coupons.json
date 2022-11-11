@@ -5,5 +5,15 @@
     "individual_use": true,
     "exclude_sale_items": true,
     "minimum_amount": "100.00"
+  },
+  "editedCoupon": {
+    "discount_type": "fixed_cart",
+    "amount": "15",
+    "individual_use": false,
+    "exclude_sale_items": false,
+    "minimum_amount": "200.00"
+  },
+  "deleteCoupon": {
+    "force": "true"
   }
 }
