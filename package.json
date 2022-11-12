@@ -11,5 +11,8 @@
   "devDependencies": {
     "@faker-js/faker": "^7.6.0",
     "cypress": "^11.0.1"
+  },
+  "dependencies": {
+    "joi": "^17.7.0"
   }
 }

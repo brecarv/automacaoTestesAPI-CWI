@@ -4,11 +4,16 @@ import tokenFixture from "../../fixtures/token.json";
 import couponsFixture from "../../fixtures/coupons.json";
 import statusFixture from "../../fixtures/status.json";
 
+import couponWooCommerceSchema from "../../contracts/coupon.contract";
+
 describe("Coupons", () => {
   it("Listar todos os coupons", () => {
     cy.getCouponsWooCommerce(tokenFixture.token).then((response) => {
       expect(response).to.exist;
       expect(response.status).to.eq(statusFixture.ok);
+      for (let i = 0; i < array.length; i++) {
+        return couponWooCommerceSchema.validateAsync(response.body[i]);
+      }
     });
   });
 
@@ -38,10 +43,13 @@ describe("Coupons", () => {
       expect(response.body.minimum_amount).to.eq(
         couponsFixture.validCoupon.minimum_amount
       );
-      cy.deleteCouponsWooCommerce(
-        tokenFixture.token,
-        id,
-        couponsFixture.deleteCoupon.force
+      return (
+        couponWooCommerceSchema.validateAsync(response.body),
+        cy.deleteCouponsWooCommerce(
+          tokenFixture.token,
+          id,
+          couponsFixture.deleteCoupon.force
+        )
       );
     });
   });
@@ -84,10 +92,13 @@ describe("Coupons", () => {
         expect(response.body.minimum_amount).to.eq(
           couponsFixture.editedCoupon.minimum_amount
         );
-        cy.deleteCouponsWooCommerce(
-          tokenFixture.token,
-          id,
-          couponsFixture.deleteCoupon.force
+        return (
+          couponWooCommerceSchema.validateAsync(response.body),
+          cy.deleteCouponsWooCommerce(
+            tokenFixture.token,
+            id,
+            couponsFixture.deleteCoupon.force
+          )
         );
       });
     });
